@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Find Cat</string>
+    <string name="game_hint">Попробуйте найти кота на поле</string>
+    <string name="cat_found">Вот же он! Вы его нашли!</string>
 </resources>
