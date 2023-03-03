@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.Random;
+
 public class MainActivity extends AppCompatActivity {
     private TextView seekField;
     private TextView hint;
@@ -23,9 +25,14 @@ public class MainActivity extends AppCompatActivity {
         hint = findViewById(R.id.hint);
         seekField = findViewById(R.id.seekField);
         seekField.setOnTouchListener(listener);
-        catX = 100;
-        catY = 0;
-
+        Random random = new Random();
+        seekField.post(new Runnable() {
+            @Override
+            public void run() {
+                catX = random.nextInt(seekField.getWidth());
+                catY = random.nextInt(seekField.getHeight());
+            }
+        });
     }
 
     private void checkCatFound(float x, float y) {
